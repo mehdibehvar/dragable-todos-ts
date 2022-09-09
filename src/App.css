@@ -1,38 +1,179 @@
-.App {
+@font-face {
+  font-family: Vazirmatn RD;
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Round-Dots/fonts/webfonts/Vazirmatn-RD[wght].woff2') format('woff2 supports variations'),
+       url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Round-Dots/fonts/webfonts/Vazirmatn-RD[wght].woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+.todo_app {
+
+font-family:Vazirmatn RD;
+width: 100vw;
+height: 100vh;
+color: yellow;
+display:flex;
+flex-direction: column;
+align-items: center;
+}
+.header{
+  border-bottom: 1px solid rgb(0, 234, 255);
+  width: 90%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.main_container{
+  margin-top: 20px;
+  width: 100%;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input_form{
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row-reverse;
+  height: 80px;
+
+}
+.todo_input{
+  position: absolute;
+  top: 20px;
+  width: 81%;
+  height: 40px;
+  border-radius: 20px;
+  direction: rtl;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: Vazirmatn RD;
+}
+.add_button{
+  position: absolute;
+  top: 22px;
+  left: 9%;
+  height: 42px;
+  width: 42px;
+  border-radius: 20px;
+  background-color: aqua;
+  /* outline: none; */
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 900;
+  color: rgb(20, 21, 26);
+  padding: 5px;
+
+}
+.add_button:hover{
+  box-shadow: 0 0 10px 2px cyan;
+  transform: scale(1.05);
+}
+/* ///////-//////////////////// */
+.todos_container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul.active_list{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  margin: 10px;
+  background-color: aqua;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+ul.completed_list{
+  width: 40%;
+  display: flex;
+  align-items:flex-start;
+  justify-content: center;
+  flex-direction: column;
+  background-color: coral;
+  margin: 10px;
+padding-bottom: 10px;
+}
+ul.activeList_isdragOver{
+  background-color: rgb(154, 255, 255);
+}
+ul.completedList_isdragOver{
+  background-color: rgb(209, 64, 47);
+}
+li.todo_item{
+  width:95%;
+  margin-top: 7px;
+  background:url("https://i.picsum.photos/id/1068/7117/4090.jpg?hmac=Y6xHXrzHsNlbRTbhzZ53Yk-Ux9lUECBLbbP4wb5a1qY");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+.todo_isdraging{
+  box-shadow: 0 0 18px 8px #91ff00;
+}
+.single_todo{
+  width:90%;
+  height:50px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   overflow-y:hidden ;
+   padding: 10px;
+}
+div.icon_wrapper{
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5px;
+}
+div.icon_wrapper span svg{
+ font-size: 20px;
+ cursor: pointer;
+}
+div.icon_wrapper span svg:hover{
+  transform: scale(1.2);
+}
+.todo_text{
+  width: 70%;
+  overflow-wrap: break-word;
+  direction: rtl;
+  padding-top: 1px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Vazirmatn RD;
+  color: yellow;
+
+}
+s.donetodo_text{
+  color:gray;
+  text-decoration-color:#FF7F50;
+  text-decoration-style: double;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Vazirmatn RD;
 }
 
-.App-link {
-  color: #61dafb;
+@media screen and (max-width:700px) {
+  li.todo_item{
+    width:95%
+  }
+  .todos_container{
+    flex-direction: column;
+  }
+  ul.active_list{
+    width: 95%;
+  }
+  ul.completed_list{
+    width: 95%;
+  }
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.video_section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.list_title{
+  border-bottom: 1px solid black;
 }
